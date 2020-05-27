@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   // #1
+  const div1 = document.querySelector('#div1');
   const button = document.createElement('button');
   const buttonTxt = document.createTextNode('Click Me');
   button.appendChild(buttonTxt);
-  document.body.appendChild(button);
+  div1.appendChild(button);
   button.addEventListener('click', alertBtn);
   function alertBtn() {
     return alert('Hello from the DOM');
@@ -29,9 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const para = document.querySelectorAll('p');
   para[3].addEventListener('click', changeColor);
   function changeColor() {
-    const r = Math.round(Math.random() * 255);
-    const g = Math.round(Math.random() * 255);
-    const b = Math.round(Math.random() * 255);
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
     this.style.color = `rgb(${r},${g},${b})`;
   }
   // #5
